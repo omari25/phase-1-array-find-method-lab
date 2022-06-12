@@ -61,10 +61,16 @@ const record = [
     { year: "1960", result: "N/A"}
   ]
 
-  superbowlWin = (record) => {
+  const superbowlWin = function(record) {
 
-    const result = record.find( record => record.result === "W" );
+    const result = record.find( function(answer) {
+      return answer.result === "W" 
+    });
 
-    return !!result ? result.year : undefined;
+    if(result){
+      return result.year
+    } else {
+      return undefined
+    }
     
   }
